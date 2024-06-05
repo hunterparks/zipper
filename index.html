@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark" />
+    <title>Zipper</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        html {
+            font-family: sans-serif;
+            height: 100%;
+            padding: 0.5rem 1rem;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100%;
+        }
+
+        h3 {
+            margin-block-end: 0.25rem;
+        }
+
+        header {
+            margin-block-end: 1rem;
+        }
+
+        main>*:not(:last-child) {
+            margin-block-end: 1rem;
+        }
+
+        a,
+        pre {
+            display: block;
+            margin-block: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Zipper 🤐</h1>
+        <h2>A source of ZIP Code&trade; information.</h2>
+    </header>
+    <main>
+        <section>
+            <h3>Usage</h3>
+            <p>Go to</p>
+            <pre>/api/v1/[zip].json</pre>
+            <p>to get information about a particular ZIP Code&trade;.</p>
+            <p>This will return data to you in the following structure:</p>
+            <pre>
+{
+    "zip": string;
+    "latitude": string;
+    "longitude": string;
+    "city": string;
+    "state": string;
+    "state2": string;
+    "gridId": string;
+    "gridX": number;
+    "gridY": number;
+}
+</pre>
+        </section>
+        <section>
+            <h3>Example</h3>
+            <p>For the ZIP Code&trade; 99803, go to:</p>
+            <a href="/api/v1/99803.json">/api/v1/99803.json</a>
+            <p>and you will be returned the following information:</p>
+            <pre>
+{
+    "zip":"99803",
+    "latitude":"58.301600",
+    "longitude":"-134.419400",
+    "city":"Juneau",
+    "state":"Alaska",
+    "state2":"AK",
+    "gridId":"AJK",
+    "gridX":194,
+    "gridY":163
+}
+</pre>
+        </section>
+    </main>
+    <footer>
+        <script>document.write('&copy;' + new Date().getFullYear())</script>
+        Zipper &diamondsuit; ZIP Code&trade; is a registered
+        trademark of
+        the United States Postal Service
+    </footer>
+</body>
+
+</html>
