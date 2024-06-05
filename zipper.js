@@ -33,13 +33,13 @@ const main = async () => {
             path.join(outputPath, zip.zip, 'index.html'),
             `<html>
     <head>
-        <meta http-equiv="refresh" content="0; url=/api/v1/${zip.zip}.json" />
+        <meta http-equiv="refresh" content="0; url=/zipper/api/v1/${zip.zip}.json" />
         <script type="text/javascript">
-            window.location.href = "/api/v1/${zip.zip}.json"
+            window.location.href = "/zipper/api/v1/${zip.zip}.json"
         </script>
     </head>
     <body>
-            <p><a href="/api/v1/${zip.zip}.json">Redirect</a></p>
+            <p><a href="/zipper/api/v1/${zip.zip}.json">Redirect</a></p>
     </body>
 </html>`,
             { encoding: 'utf-8', recursive: true }
